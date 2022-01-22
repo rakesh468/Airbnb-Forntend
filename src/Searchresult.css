@@ -1,0 +1,32 @@
+.searchresult {
+  display: flex;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+.searchresult :hover {
+  opacity: 1.2;
+}
+.searchresult > img {
+  height: 200px;
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.searchresult_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+  .searchresult {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
