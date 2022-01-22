@@ -30,7 +30,8 @@ function Login() {
       method: "POST",
       body: JSON.stringify(newuser),
       headers: { "Content-Type": "application/json" },
-    }).then((data) =>data.json() )
+    }).then((data) =>data.json())
+ //storing token in local storage//
     .then((response)=>{
       const {token}=response;
       localStorage.setItem("token",token)
