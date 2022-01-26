@@ -9,7 +9,7 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
-    background-image: linear-gradient(to right top, #8193b7, #8e9fc3, #9aaccf, #a7b9dc, #b4c6e8, #b4c5e4, #b5c3e1, #b5c2dd, #a9b3c9, #9ca4b5, #9095a1, #84878e);
+    background-color: rgb(194, 192, 192);
     
 }
 .signup-form{
