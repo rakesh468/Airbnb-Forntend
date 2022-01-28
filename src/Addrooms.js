@@ -49,7 +49,7 @@ function Addrooms() {
         id="img"
         name="img"
         variant="outlined"
-        value={values.img}
+        values={values.img}
         onChange={handleChange}
         onBlur={handleBlur}
         error={errors.img && touched.img}
@@ -61,7 +61,7 @@ function Addrooms() {
         id="title"
         name="title"
         variant="outlined"
-        value={values.title}
+        values={values.title}
         onChange={handleChange}
         onBlur={handleBlur}
         error={errors.title && touched.title}
@@ -73,7 +73,7 @@ function Addrooms() {
         id="location"
         name="location"
         variant="outlined"
-        value={values.location}
+        values={values.location}
         onChange={handleChange}
         onBlur={handleBlur}
         label="Enter Location"
@@ -85,7 +85,7 @@ function Addrooms() {
         id="description"
         name="description"
         variant="outlined"
-        value={values.description}
+        values={values.description}
         onChange={handleChange}
         onBlur={handleBlur}
         error={errors.description && touched.description}
