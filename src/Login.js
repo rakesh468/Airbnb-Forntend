@@ -10,10 +10,11 @@ const formValidationSchema = yup.object({
   password: yup.string().min(8).max(12).required("Password Required"),
 });
 
-const API_URL="https://airbnb-backendcode.herokuapp.com";
+const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function Login() {
   const history = useHistory();
+   //form validation using formik and yup//
   const { handleChange, handleSubmit, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: { email: "", password: "" },
@@ -30,13 +31,14 @@ function Login() {
       method: "POST",
       body: JSON.stringify(newuser),
       headers: { "Content-Type": "application/json" },
-    }).then((data) =>data.json())
- //storing token in local storage//
-    .then((response)=>{
-      const {token}=response;
-      localStorage.setItem("token",token)
-      history.push("/");
     })
+      .then((data) => data.json())
+      //storing token in local storage//
+      .then((response) => {
+        const { token } = response;
+        localStorage.setItem("token", token);
+        history.push("/");
+      });
   };
 
   return (

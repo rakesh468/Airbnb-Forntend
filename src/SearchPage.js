@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 
-const API_URL="https://airbnb-backendcode.herokuapp.com";
+const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function SearchPage() {
   const [rooms, setrooms] = useState([]);
@@ -48,38 +48,39 @@ function SearchPage() {
         </Button>
       </div>
 
-      {rooms.map(({ img, location, title, description, price, total, id, _id }) => (
-        <Searchresult
-          img={img}
-          location={location}
-          title={title}
-          description={description}
-          price={price}
-          total={total}
-          key={_id}
-          id={_id}
-          deletebutton={
-            <IconButton
-              style={{ marginLeft: "auto" }}
-              onClick={() => deleterooms(_id)}
-              color="error"
-              aria-label="delete"
-            >
-              <DeleteIcon />
-            </IconButton>
-          }
-          editbutton={
-            <IconButton
-              color="secondary"
-              aria-label="Edit"
-              onClick={()=>history.push("/airbnb/edit/" + _id)}
-             
-            >
-              <ModeEditIcon />
-            </IconButton>
-          }
-        />
-      ))}
+      {rooms.map(
+        ({ img, location, title, description, price, total, id, _id }) => (
+          <Searchresult
+            img={img}
+            location={location}
+            title={title}
+            description={description}
+            price={price}
+            total={total}
+            key={_id}
+            id={_id}
+            deletebutton={
+              <IconButton
+                style={{ marginLeft: "auto" }}
+                onClick={() => deleterooms(_id)}
+                color="error"
+                aria-label="delete"
+              >
+                <DeleteIcon />
+              </IconButton>
+            }
+            editbutton={
+              <IconButton
+                color="secondary"
+                aria-label="Edit"
+                onClick={() => history.push("/airbnb/edit/" + _id)}
+              >
+                <ModeEditIcon />
+              </IconButton>
+            }
+          />
+        )
+      )}
     </div>
   );
 }

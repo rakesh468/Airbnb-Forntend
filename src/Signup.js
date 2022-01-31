@@ -15,6 +15,8 @@ const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function Signup() {
   const history = useHistory();
+  
+ //form validation using formik and yup//
   const { handleChange, handleSubmit, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: { email: "", password: "" },

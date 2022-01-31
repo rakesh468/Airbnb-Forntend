@@ -12,11 +12,12 @@ import Header from "./Header";
 import Home from "./Home";
 import SearchPage from "./SearchPage";
 import Login from "./Login";
-import Signup from "./Signup"
+import Signup from "./Signup";
 import Addrooms from "./Addrooms";
 import Editrooms from "./Editrooms";
 
 function App() {
+  //theme setting//
   const [mode, setmode] = useState("light");
   const theme = createTheme({
     palette: {
@@ -54,7 +55,7 @@ function App() {
                 <SearchPage />
               </Route>
               <Route path="/signup">
-                <Signup/>
+                <Signup />
               </Route>
               <Route path="/login">
                 <Login />

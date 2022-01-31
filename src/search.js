@@ -24,10 +24,7 @@ function Search() {
   }
   return (
     <div className="search">
-      <DateRangePicker
-        ranges={[selectionRange]}
-        onChange={handleSelect}
-      />
+      <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
       <h2>
         Number of guests <PeopleIcon />
       </h2>
@@ -39,4 +36,3 @@ function Search() {
   );
 }
 export default Search;
-

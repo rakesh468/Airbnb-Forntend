@@ -14,10 +14,11 @@ const formvalidationSchema = yup.object({
   total: yup.string().required("Total Required"),
 });
 
-const API_URL="https://airbnb-backendcode.herokuapp.com";
+const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function Addrooms() {
   const history = useHistory();
+  //form validation using formik and yup//
   const { handleChange, handleBlur, handleSubmit, values, errors, touched } =
     useFormik({
       initialValues: {

@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import * as yup from "yup";
 
+//form validation using formik and yup//
 const formvalidationSchema = yup.object({
   img: yup.string().required(" Image URL Required"),
   title: yup.string().required("Title Required"),
@@ -14,7 +15,7 @@ const formvalidationSchema = yup.object({
   total: yup.string().required("Total Required"),
 });
 
-const API_URL="https://airbnb-backendcode.herokuapp.com";
+const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function Editrooms() {
   const { id } = useParams();
