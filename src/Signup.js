@@ -5,6 +5,9 @@ import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import "./Signup.css";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
 
 const formValidationSchema = yup.object({
   email: yup.string().required("Email Id Required"),
@@ -14,6 +17,20 @@ const formValidationSchema = yup.object({
 const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function Signup() {
+
+  const [open, setOpen] = React.useState(false);
+  const [Msg, setMsg] = React.useState("");
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
   const history = useHistory();
   
  //form validation using formik and yup//
@@ -33,10 +50,24 @@ function Signup() {
       method: "POST",
       body: JSON.stringify(newuser),
       headers: { "Content-Type": "application/json" },
-    }).then(() => history.push("/login"));
-  };
+    }).then((response)=>{
+      if(response.status===200){
+        setMsg({Message:"Login Successfully",status:"success"});
+        setOpen(true);
+        setTimeout(()=>history.push("/login"),3000);
+      }else{
+        setMsg({Message:"Invalide Credentials",status:"error"});
+        setOpen(true);
+      }
+    })
+     .catch((err)=>{
+       setMsg({message:"error",status:"error"});
+       setOpen(true);
+     });
+     }
   return (
     <div>
+      <div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <TextField
           onChange={handleChange}
@@ -64,6 +95,21 @@ function Signup() {
           Sign up
         </Button>
       </form>
+    </div>
+    <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity={Msg.status}
+          sx={{ width: "100%" }}
+        >
+          {Msg.Message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

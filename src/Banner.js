@@ -21,8 +21,8 @@ function Banner() {
         </Button>
       </div>
       <div className="banner_info">
-        <h1 >Getup to explore the world</h1>
-        <h5 >Be a wanderlust in our own world</h5>
+        <h1 >Getup to Explore the World</h1>
+        <h5 >Be a Wanderlust in our own World</h5>
         <Button onClick={() => history.push("/search")} variant="outlined">
          Explore World
         </Button>
