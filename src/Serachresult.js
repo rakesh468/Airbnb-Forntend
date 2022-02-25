@@ -3,8 +3,10 @@ import BasicRating from "./Basicrating";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
+import {useHistory} from "react-router-dom";
 
 function Searchresult({
+
   img,
   location,
   title,
@@ -13,13 +15,17 @@ function Searchresult({
   total,
   deletebutton,
   editbutton,
-}) {
+  id
+})
+{
+const history=useHistory();
+
   return (
     <Card className="searchresult">
-      <img src={img} alt="" />
-      <CardContent className="searchresult_info">
+      <img src={img} alt={title}onClick={()=>history.push("/rooms/"+id)} />
+      <CardContent className="searchresult_info" >
         <div className="searchesult_infotop">
-          <p>{location}</p>
+          <h4>{location}</h4>
           <h3>
             <b>{title}</b>
           </h3>
@@ -27,7 +33,7 @@ function Searchresult({
         </div>
         <BasicRating />
         <h2>{price}</h2>
-        <p>{total}</p>
+        <h3>{total}</h3>
         <CardActions>
           {deletebutton}
           {editbutton}

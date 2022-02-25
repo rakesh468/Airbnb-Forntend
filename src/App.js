@@ -15,6 +15,8 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Addrooms from "./Addrooms";
 import Editrooms from "./Editrooms";
+import  Roomdetails  from "./Roomdetails";
+
 
 function App() {
   //theme setting//
@@ -59,6 +61,9 @@ function App() {
               </Route>
               <Route path="/login">
                 <Login />
+              </Route>
+              <Route path="/rooms/:id">
+                <Roomdetails/>
               </Route>
             </Switch>
           </Router>

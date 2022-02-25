@@ -134,7 +134,7 @@ function Footer() {
         </div>
       </div>
 
-      <p className="copyright">Airbnb footer remade by Mayank Kamboj</p>
+      <p className="copyright">Airbnb footer remade by Rakesh Kumar</p>
     </footer>
   );
 }

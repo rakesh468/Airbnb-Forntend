@@ -1,5 +1,5 @@
 import "./SearchPage.css";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import Searchresult from "./Serachresult";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -34,18 +34,12 @@ function SearchPage() {
       <div className="searchpage_info">
         <p>62 stays . 24 August to 30 August .2 Guest</p>
         <h2>Stays Nearby</h2>
-        <Button variant="contained"> Cancellation Flexibility</Button>
+        {/* <Button variant="contained"> Cancellation Flexibility</Button>
         <Button variant="contained">Type of Place</Button>
         <Button variant="contained">Price</Button>
         <Button variant="contained">Rooms and Beds</Button>
-        <Button variant="contained">More Filters</Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => history.push("/addrooms")}
-        >
-          Add Rooms+
-        </Button>
+        <Button variant="contained">More Filters</Button> */}
+        
       </div>
 
       {rooms.map(

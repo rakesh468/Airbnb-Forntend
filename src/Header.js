@@ -1,8 +1,7 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import LanguageIcon from "@mui/icons-material/Language";
-import ExpandMore from "@mui/icons-material/ExpandMore";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import { useHistory } from "react-router-dom";
@@ -18,17 +17,14 @@ function Header() {
           alt=""
         />
       </Link>
-      <div className="header_center">
+      {/* <div className="header_center">
         <input type="text" placeholder="Search Rooms" />
         <SearchIcon />
-      </div>
+      </div> */}
       <div className="header_right">
         <p> Become a Host</p>
         <IconButton>
-          <LanguageIcon />{" "}
-        </IconButton>
-        <IconButton>
-          <ExpandMore />
+          <LanguageIcon onClick={()=>history.push("/addrooms")} />{" "}
         </IconButton>
         <div>
           <IconButton onClick={() => history.push("/login")}>

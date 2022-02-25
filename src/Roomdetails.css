@@ -1,0 +1,28 @@
+.detail-image{
+    height: 450px;
+    width: 550px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.detail-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+@media(max-width:720px){
+    .detail-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+    .detail-image{
+        width: 100%;
+    }
+    
+}

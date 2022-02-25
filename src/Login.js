@@ -66,9 +66,10 @@ function Login() {
      }
 
   return (
-    <div>
-      <div>
-      <form className="login-form" onSubmit={handleSubmit}>
+    <div className="main">
+      <div className="sub-main">
+      <form onSubmit={handleSubmit}>
+      <header>Login</header>
         <TextField
           onChange={handleChange}
           onBlur={handleBlur}

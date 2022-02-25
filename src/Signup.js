@@ -66,15 +66,16 @@ function Signup() {
      });
      }
   return (
-    <div>
-      <div>
-      <form className="signup-form" onSubmit={handleSubmit}>
+    <div className="mains">
+      <div className="sub-mains">
+      <form  onSubmit={handleSubmit}>
+      <header>Signup</header>
         <TextField
           onChange={handleChange}
           onBlur={handleBlur}
           id="email"
           type="email"
-          variant="standard"
+          variant="filled"
           label="Enter Email"
           error={errors.email && touched.email}
           value={values.email}
@@ -86,13 +87,13 @@ function Signup() {
           value={values.password}
           id="password"
           type="password"
-          variant="standard"
+          variant="filled"
           label="Enter Password"
           error={errors.password && touched.password}
           helperText={errors.password && touched.password && errors.password}
         />
         <Button variant="contained" color="success" type="submit">
-          Sign up
+         <b>Sign up</b> 
         </Button>
       </form>
     </div>
