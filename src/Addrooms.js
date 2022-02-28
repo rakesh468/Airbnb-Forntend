@@ -41,7 +41,9 @@ function Addrooms() {
     fetch(`${API_URL}/airbnb`, {
       method: "POST",
       body: JSON.stringify(newrooms),
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "X-auth-token":localStorage.getItem('token'),
+        "Content-Type": "application/json", },
     }).then(() => history.push("/search"));
   };
   return (

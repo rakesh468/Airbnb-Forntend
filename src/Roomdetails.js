@@ -4,21 +4,23 @@ import { useState, useEffect } from "react";
 import "./Roomdetails.css";
 import BasicRating from "./Basicrating";
 import Button from "@mui/material/Button";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 
-
 const API_URL = "https://airbnb-backendcode.herokuapp.com";
 
 function Roomdetails() {
-    const history=useHistory();
+  const history = useHistory();
   const { id } = useParams();
   const [rooms, setrooms] = useState({});
 
   useEffect(() => {
-    fetch(`${API_URL}/airbnb/${id}`, { method: "GET" })
+    fetch(`${API_URL}/airbnb/${id}`, {
+      method: "GET",
+      headers: { "X-auth-token": localStorage.getItem("token") },
+    })
       .then((data) => data.json())
       .then((dt) => setrooms(dt));
   }, [id]);
@@ -35,10 +37,15 @@ function Roomdetails() {
         <h2>{rooms.price}</h2>
         <h3>{rooms.total}</h3>
         <CardActions>
-        <Button startIcon={<ArrowBackIcon />} variant="contained" onClick={()=>history.push("/search")}>Go Back</Button>
+          <Button
+            startIcon={<ArrowBackIcon />}
+            variant="contained"
+            onClick={() => history.push("/search")}
+          >
+            Go Back
+          </Button>
         </CardActions>
-</CardContent>
-
+      </CardContent>
     </Card>
   );
 }

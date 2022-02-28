@@ -24,6 +24,7 @@ function Editrooms() {
   useEffect(() => {
     fetch(`${API_URL}/airbnb/${id}`, {
       method: "GET",
+      headers:{"X-auth-token":localStorage.getItem('token')}
     })
       .then((data) => data.json())
       .then((rm) => setrooms(rm));
@@ -54,8 +55,10 @@ function Updaterooms({ rooms }) {
     fetch(`${API_URL}/airbnb/${rooms._id}`, {
       method: "PUT",
       body: JSON.stringify(updaterooms),
-      headers: { "Content-Type": "application/json" },
-    }).then(() => history.push("/search"));
+      headers: { 
+        "X-auth-token":localStorage.getItem('token'),
+        "Content-Type": "application/json" },
+     }).then(() => history.push("/search"));
   };
   return (
     <form onSubmit={handleSubmit} className="room-form">

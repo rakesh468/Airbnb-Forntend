@@ -51,13 +51,19 @@ function Login() {
     })
     .then((response)=>{
       if(response.status===200){
-        setMsg({Message:"Login Successfully",status:"success"});
-        setOpen(true);
-        setTimeout(()=>history.push("/"),3000);
+        return response.json()
+        
       }else{
         setMsg({Message:"Invalide Credentials",status:"error"});
         setOpen(true);
       }
+    })
+    .then((response)=>{
+      console.log(response)
+      localStorage.setItem('token',response.token)
+      setMsg({Message:"Login Successfully",status:"success"});
+        setOpen(true);
+        setTimeout(()=>history.push("/"),3000);
     })
      .catch((err)=>{
        setMsg({message:"error",status:"error"});
@@ -75,7 +81,7 @@ function Login() {
           onBlur={handleBlur}
           id="email"
           type="email"
-          variant="standard"
+          variant="filled"
           label="Enter Email"
           error={errors.email && touched.email}
           value={values.email}
@@ -87,7 +93,7 @@ function Login() {
           value={values.password}
           id="password"
           type="password"
-          variant="standard"
+          variant="filled"
           label="Enter Password"
           error={errors.password && touched.password}
           helperText={errors.password && touched.password && errors.password}

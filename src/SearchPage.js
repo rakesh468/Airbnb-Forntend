@@ -15,6 +15,8 @@ function SearchPage() {
   const getrooms = () => {
     fetch(`${API_URL}/airbnb`, {
       method: "GET",
+      headers:{"X-auth-token":localStorage.getItem('token')}
+      
     })
       .then((data) => data.json())
       .then((rm) => setrooms(rm));
@@ -24,6 +26,7 @@ function SearchPage() {
   const deleterooms = (id) => {
     fetch(`${API_URL}/airbnb/${id}`, {
       method: "DELETE",
+      headers:{"X-auth-token":localStorage.getItem('token')}
     }).then(() => getrooms());
   };
 
@@ -32,15 +35,9 @@ function SearchPage() {
   return (
     <div className="searchpage">
       <div className="searchpage_info">
-        <p>62 stays . 24 August to 30 August .2 Guest</p>
+        <p>62 stays  24 August to 30 August  2 Guest</p>
         <h2>Stays Nearby</h2>
-        {/* <Button variant="contained"> Cancellation Flexibility</Button>
-        <Button variant="contained">Type of Place</Button>
-        <Button variant="contained">Price</Button>
-        <Button variant="contained">Rooms and Beds</Button>
-        <Button variant="contained">More Filters</Button> */}
-        
-      </div>
+       </div>
 
       {rooms.map(
         ({ img, location, title, description, price, total, id, _id }) => (
