@@ -15,9 +15,7 @@ function SearchPage() {
   const getrooms = () => {
     fetch(`${API_URL}/airbnb`, {
       method: "GET",
-      headers:{"X-auth-token":localStorage.getItem('token')}
-      
-    })
+  })
       .then((data) => data.json())
       .then((rm) => setrooms(rm));
   };
