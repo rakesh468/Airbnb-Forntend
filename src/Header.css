@@ -13,7 +13,7 @@
   height: 100px;
   margin-left: 20px;
 }
-.header_center {
+/* .header_center {
   display: flex;
   flex: 1;
   padding: 10px;
@@ -22,14 +22,14 @@
   height: 30px;
   border: 1.5px solid black;
   border-radius: 40px;
-}
+} */
 
-.header_center > input {
+/* .header_center > input {
   outline: none;
   border: none;
   padding: 10px;
   border-radius: 10px;
-}
+} */
 
 .header_right {
   display: flex;

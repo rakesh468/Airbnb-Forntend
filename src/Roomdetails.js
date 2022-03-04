@@ -57,7 +57,6 @@ function Roomdetails() {
             stripeKey="pk_test_51KZ7tgSCLtg0NGDAlaK5C61XEPGHKE4zH0UbTO6eGe0bd23CKV2Z6tEzWkyvA9Yf3O2Fm2hARJfc9FoshOFiNuFT00q3zNCxlL"
             token={handletoken}
             billingAddress
-            shippingAddress
            name={rooms.title}
            amount={rooms.total * 100}
           />

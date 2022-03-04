@@ -28,7 +28,7 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <Paper elevation={1} style={{ borderRadius: "0px", minHeight: "100vh" }}>
+      <Paper elevation={0} style={{ borderRadius: "0px", minHeight: "100vh" }}>
         <div className="App">
           <Router>
             <Button
